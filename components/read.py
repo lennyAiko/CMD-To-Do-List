@@ -1,28 +1,17 @@
 ### READ A TO-DO
 
 from components.storage import get_all_titles, get_item
-
+from components.update import show_list
 
 def disintegrate(items):
+    print(items)
     for i in items[0]:
         print(f'~ {i}')
-    print(items[1])
-
+    print(items[2])
 
 def get_items_from_storage():
     
-    buffer = get_all_titles()
-
-    print("""
-    index | title
-    -------------
-    """)
-
-    count = 1
-
-    for i in buffer:
-        print(f'\t{count} | {i}')
-        count += 1
+    buffer = show_list()
     
     choice = int(input("Enter index of title: "))
 

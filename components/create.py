@@ -17,16 +17,18 @@ def collect_items():
         buffer.append(message + '\n')
 
 
-def create_item():
+def create_item(status="pending"):
 
     list_title = input("Enter title of the list: ")
 
     list_items = collect_items()
 
-    to_do = list_items, f'created at: {time}, on: {date}'
+    to_do = [list_items, status, f'created at: {time}, on: {date}']
 
     store_item(key=list_title, value=to_do)
 
     print("List stored successfully.")
 
     return
+
+

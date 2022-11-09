@@ -8,11 +8,18 @@ def store_item(key, value, dictionary=store):
 
 def get_all_titles(dictionary=store):
     buffer = []
+    status = []
     
     for key, items in dictionary.items():
         buffer.append(key)
+        status.append(items[1])
     
-    return buffer
+    return buffer, status, key
 
 def get_item(index, dictionary=store):
-    return dictionary[index]
+    value = list(dictionary[index])
+    return value
+
+def update(value, dictionary=store):
+    dictionary.update(value)
+    return
